@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.zhijiang.tax";
+
+service TaxCalculator {
+    rpc calc(TaxRequest) returns (TaxResponse) {
+    }
+}
+
+message TaxRequest {
+    double income = 1;
+    double deduction = 2;
+}
+
+message TaxResponse {
+    double income = 1;
+    double tax = 2;
+}
